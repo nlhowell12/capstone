@@ -5,7 +5,7 @@ class Activity extends Component {
         const { activity } = this.props
         return (
             <div className='activity'>
-                <img src={require("../images/capstoneLogo.png")} alt="userPhoto"/>
+                <img src={require("../capstoneLogo.png")} alt="userPhoto"/>
                 <p>{`${activity.user} ${activity.activity}`}</p>
             </div>
         )
