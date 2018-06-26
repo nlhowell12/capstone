@@ -1,28 +1,66 @@
-.App {
+/* Homepage Component */
+
+.loginWrap {
+  display: flex;
+  background-color: #00f19d;
+  height: 100vh
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: auto;
+}
+
+.loginForm img {
+  margin: auto;
+  height: 200px;
+  width: 200px
+}
+
+.loginForm h4 {
+  align-self: center;
+  color: #342a73;
+}
+
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrap input {
+  align-self: center;
+  margin: 0px auto 15px auto;
+  width: 250px;
+  height: 40px;
+  color: #342a73
+}
+
+::placeholder {
+  color: #342a73;
+  padding: 0px 0px 0px 10px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.loginForm a {
+  align-self: center;
+  margin: 15px auto 0px auto;
+  align-content: center;
   text-align: center;
+  color: #342a73;
+  font-weight: bold;
+  font-size: 10pt;
+  text-decoration: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.loginButton {
+  align-self: center;
+  margin: auto;
+  border-radius: 15px;
+  height: 35px;
+  width: 200px;
+  color: #efefef;
+  background-color: #342a73;
 }
