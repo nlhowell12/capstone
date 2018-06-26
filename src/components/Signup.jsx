@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-export class Signup extends Component {
+class Signup extends Component {
     render () {
         const { history } = this.props
         return (

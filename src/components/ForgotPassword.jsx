@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { withRouter } from 'react-router';
 
-export class Login extends Component {
+class ForgotPassword extends Component {
     render () {
         const { history } = this.props
         return (
@@ -9,14 +9,12 @@ export class Login extends Component {
             <div className='loginWrap'>
                 <div className='loginForm'>
                 <img src={require("../images/capstoneLogo.png")} alt="logo"/>
-                    <h4>Sign in to your Workspace</h4>
+                    <h4>Please enter your email</h4>
                     <div className='inputWrap'>
                         <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
                     </div>
-                    <button className='loginButton'>LOGIN</button>
-                    <a onClick={() => {history.push('/signup')}}>Don't have an account? Create one!</a>
-                    <a onClick={() => {history.push('/forgot')}}>Forgot Password?</a>
+                    <button className='loginButton'>Submit</button>
+                    <a onClick={() =>{history.push('/')}}>Back to login</a>
                 </div>
             </div>
             </div>
@@ -24,4 +22,4 @@ export class Login extends Component {
     }
 }
 
-export default withRouter(Login)
+export default withRouter(ForgotPassword)
