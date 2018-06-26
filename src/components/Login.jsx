@@ -8,7 +8,7 @@ class Login extends Component {
             <div>
             <div className='loginWrap'>
                 <div className='loginForm'>
-                <img src={require("../images/capstoneLogo.png")} alt="logo"/>
+                <img src={require("../capstoneLogo.png")} alt="logo"/>
                     <h4>Sign in to your Workspace</h4>
                     <div className='inputWrap'>
                         <input type="email" placeholder="Email" />
