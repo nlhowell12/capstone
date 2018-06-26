@@ -1,4 +1,4 @@
-/* Homepage Component */
+/* Login Component, Signup, and Forget Password Components */
 
 .loginWrap {
   display: flex;
@@ -53,6 +53,7 @@
   font-weight: bold;
   font-size: 10pt;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .loginButton {
@@ -64,3 +65,38 @@
   color: #efefef;
   background-color: #342a73;
 }
+
+/* Success Message Component */
+
+.successMessage {
+  align-self: center;
+  margin: auto;
+  width: 400px;
+  height: 80%
+}
+
+svg {
+  width: 100px;
+  display: block;
+  margin: 40px auto 0;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  &.circle {
+    -webkit-animation: dash .9s ease-in-out;
+    animation: dash .9s ease-in-out;
+  }
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash .9s .35s ease-in-out forwards;
+    animation: dash .9s .35s ease-in-out forwards;
+  }
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
+    animation: dash-check .9s .35s ease-in-out forwards;
+  }
+}
+
