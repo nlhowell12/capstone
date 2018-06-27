@@ -5,6 +5,8 @@ export const POST_PROJECTS = 'POST_PROJECTS';
 export const POST_MESSAGES = 'POST_MESSAGES';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const LOGOUT = 'LOGOUT'
+export const MARK_COMPLETE = 'MARK_COMPLETE'
+export const DELETE_TODO = 'DELETE_TODO'
 
 export const signup = (username, password, email) => {
     return {
@@ -64,4 +66,16 @@ export const getMessages = () => {
         type: GET_MESSAGES
     }
 };
+
+export const deleteTodo = () => {
+    return {
+        type: DELETE_TODO
+    }
+}
+
+export const markComplete = () => {
+    return {
+        type: MARK_COMPLETE
+    }
+}
 

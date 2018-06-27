@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 
 class Project extends Component {
     render() {
-        const { project } = this.props
+        const { project, history, id } = this.props
         return (
-            <div className="project">
+            <div className="project" onClick={() => {history.push(`/project/${id}`)}}>
                 <img className="projectFile" src={require("../projectFile.png")} alt="projectFile"/>
                 <h3>{project.projectName}</h3>
             </div>
@@ -12,4 +13,4 @@ class Project extends Component {
     }
 }
 
-export default Project
+export default withRouter(Project)

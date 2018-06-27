@@ -14,7 +14,7 @@ class ProjectListing extends Component {
                 <a>MORE</a>
                 </div>
                 <div className="projectsDisplay">
-                    {projects.map((project, id) => <Project key={id} project={project}></Project>)}
+                    {projects.map((project, id) => <Project key={id} id={id} project={project}></Project>)}
                 </div>
             </div>
         )

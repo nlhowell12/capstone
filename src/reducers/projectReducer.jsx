@@ -3,9 +3,15 @@ import { createStore } from 'redux'
 const initialState = {
     username: '',
     email:'',
+    activities: [
+        {
+            user: 'Annie Brzezinski',
+            activity: "added John to the project:  CSL Logo Design Proof"
+    }
+    ],
     projects: [
         {
-            projectName: '',
+            projectName: 'Test Project',
             summary: '',
             targetAudience: '',
             dates: '',
@@ -14,8 +20,12 @@ const initialState = {
             leads: '',
             tasks: [
                 {
-                    taskName: '',
-                    completed: ''
+                    taskName: 'Making this shit work',
+                    completed: false
+                },
+                {
+                    taskName: 'Really hate css',
+                    completed: false
                 }
             ],
             channel: {
