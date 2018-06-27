@@ -69,34 +69,248 @@
 /* Success Message Component */
 
 .successMessage {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   align-self: center;
   margin: auto;
   width: 400px;
-  height: 80%
+  height: 600px;
+}
+
+.successMessage * {
+  align-self: center;
+  margin: 30px auto 0px auto;
+  color: #342a73;
+}
+
+.successMessage p {
+  width: 80%;
+  line-height: 1.8;
+}
+
+.successMessage button {
+  border-radius: 15px;
+  height: 35px;
+  width: 200px;
+  background-color: #00f19d;
+}
+
+.successMessage h6 {
+  opacity: 0.25;
 }
 
 svg {
-  width: 100px;
+  width: 200px;
   display: block;
   margin: 40px auto 0;
 }
 
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 0;
-  &.circle {
-    -webkit-animation: dash .9s ease-in-out;
-    animation: dash .9s ease-in-out;
-  }
-  &.line {
-    stroke-dashoffset: 1000;
-    -webkit-animation: dash .9s .35s ease-in-out forwards;
-    animation: dash .9s .35s ease-in-out forwards;
-  }
-  &.check {
-    stroke-dashoffset: -100;
-    -webkit-animation: dash-check .9s .35s ease-in-out forwards;
-    animation: dash-check .9s .35s ease-in-out forwards;
-  }
+/* Homepage Component */
+
+.homepage {
+  background-color: #efefef;
+  height: 100%;
 }
 
+/* App Header */
+.appHeader {
+  width: 100vw;
+  height: 7%;
+  background-color: #342a73;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.appHeader img {
+  height: 90%;
+  margin: auto
+}
+
+.userImage {
+  position: absolute;
+  right: 0
+}
+
+/* Recent Activity && Activity Components */
+
+.recentActivity {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #efefef;
+  width: 80%;
+  height: 300px;
+  margin: 30px auto auto auto;
+  position: relative;
+  top: 40px;
+  background-color: white;
+}
+
+.recentActivity * {
+  margin: 10px 10px 0px 15px;
+  color: #342a73
+}
+
+.recentActivity a {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px 15px 15px 0px;
+  font-weight: bold;
+}
+
+.activity {
+  display: flex;
+}
+
+.activity img {
+  height: 45px;
+  max-width: 45px;
+  border-radius: 20px;
+  flex-grow: 1
+}
+
+/* Projects Listing && Projects Components */
+
+.projectListing {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #efefef;
+  width: 80%;
+  height: 400px;
+  margin: 30px auto auto auto;
+  position: relative;
+  top: 40px;
+  background-color: white;
+}
+
+.projectListing * {
+  margin: 10px 10px 0px 15px;
+  color: #342a73
+}
+
+.moreDiv {
+  display: flex;
+  position: relative;
+}
+
+.moreDiv a {
+  position: absolute;
+  right: 15px;
+  font-weight: bold;
+}
+
+.moreDiv h5 {
+  opacity: 0.25;
+}
+
+.project {
+  border: 1px solid #efefef;
+  width: 150px;
+  height: 250px;
+}
+
+.project * {
+  color: #342a73;
+}
+
+.projectFile {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+/* Nav Bar Component */
+
+.navBar {
+  width: 100vw;
+  height: 7%;
+  background-color: #342a73;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.navBar img {
+  width: 80px;
+  margin: 5px auto 0px auto;
+  cursor: pointer;
+}
+
+/* Tasks Component */
+
+.taskWrap {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #efefef;
+  width: 80%;
+  height: 400px;
+  margin: 30px auto auto auto;
+  position: relative;
+  top: 40px;
+  background-color: white;
+}
+.taskWrap * {
+  margin: 10px 10px 0px 15px;
+  color: #342a73;
+  
+}
+
+.todoWrap {
+  border: 1px solid #efefef;
+}
+
+.todoWrap h3 {
+  margin: 20px 0 0 20px
+}
+
+.todo-list {
+  margin: 40px auto auto 30px;
+	padding: 0;
+	list-style: none;
+}
+
+.todo-list li {
+	position: relative;
+  font-size: 24px;
+  margin: auto auto 30px auto;
+}
+
+.todo-list li label {
+  margin: auto auto auto 80px
+}
+
+
+input[type='checkbox'] {
+  transform: scale(2);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeSpeed;
+	width: 13px;
+	height: 13px;
+	margin: 0;
+	margin-right: 1px;
+	cursor: pointer;
+}
+
+input[type='checkbox']:after {
+	content: "";
+	vertical-align: middle;
+	text-align: center;
+	line-height: 13px;
+	position: absolute;
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+  font-size: 10px;	
+  border-radius: 4px;
+}
+
+input[type='checkbox']:checked:after {
+	background: #342a73;
+	content: '\2714';
+  color: #fff;
+  outline: 0;
+}

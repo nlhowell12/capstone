@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import { Login, Signup, ForgotPassword } from './components'
-import './App.css' 
+import { Login, Signup, ForgotPassword, Homepage } from './components'
+import './App.css';
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
           <Route exact path = '/' render={() => <Login></Login>}/>
           <Route path = '/signup' render={() => <Signup></Signup>}/>
           <Route path = '/forgot' render={() => <ForgotPassword></ForgotPassword>}/>
+          <Route path = '/home' render={() => <Homepage></Homepage>}/>
         </Switch>
       </div>
     );

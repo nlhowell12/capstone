@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import RecentActivity from './RecentActivity.jsx'
-import AppHeader from './AppHeader.jsx'
-import ProjectListing from './ProjectListing.jsx'
+import { RecentActivity, AppHeader, ProjectListing, NavBar, Tasks } from '../components';
 
 class Homepage extends Component {
     render() {
@@ -10,6 +8,8 @@ class Homepage extends Component {
                 <AppHeader></AppHeader>
                 <RecentActivity></RecentActivity>
                 <ProjectListing></ProjectListing>
+                <Tasks></Tasks>
+                <NavBar></NavBar>
             </div>
         )
     }
