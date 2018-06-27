@@ -139,7 +139,7 @@ svg {
 .recentActivity {
   display: flex;
   flex-direction: column;
-  border: 1px solid #efefef;
+  border: 1px solid lightgray;
   width: 80%;
   height: 300px;
   margin: 30px auto auto auto;
@@ -177,7 +177,7 @@ svg {
 .projectListing {
   display: flex;
   flex-direction: column;
-  border: 1px solid #efefef;
+  border: 1px solid lightgray;
   width: 80%;
   height: 400px;
   margin: 30px auto auto auto;
@@ -186,9 +186,21 @@ svg {
   background-color: white;
 }
 
+.upperProject {
+  cursor: pointer;
+}
+
+.projectsPageDisplay {
+  padding-top: 60px;
+}
+
 .projectListing * {
   margin: 10px 10px 0px 15px;
   color: #342a73
+}
+
+.projectListing a {
+  cursor: pointer;
 }
 
 .moreDiv {
@@ -245,7 +257,7 @@ svg {
 .taskWrap {
   display: flex;
   flex-direction: column;
-  border: 1px solid #efefef;
+  border: 1px solid lightgray;
   width: 80%;
   height: 400px;
   margin: 30px auto auto auto;
@@ -313,4 +325,190 @@ input[type='checkbox']:checked:after {
 	content: '\2714';
   color: #fff;
   outline: 0;
+}
+
+/* Project Overview */
+
+.projectOverview {
+  background-color: #efefef;
+  height: 100vh;
+  padding-top: 60px;
+}
+
+.projectOverview * {
+  color: #342a73;
+  background-color: white;
+}
+
+.projectOverview h1 {
+  background-color: #efefef;
+  margin: 30px auto auto 30px
+}
+
+.upperProject {
+  display: flex;
+  width: 80%;
+  margin: 40px auto 0 auto;
+  border: 1px solid lightgrey;
+}
+
+.upperProject * {
+  color: #342a73;
+  background-color: white;
+}
+.upperProject img {
+  margin: 0;
+}
+
+.upperProject h2 {
+  margin-left: 40px;
+}
+
+.lowerProject {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  border: 1px solid lightgrey;
+}
+
+.lowerProject ul {
+  padding-bottom: 10px;
+  list-style: none;
+}
+
+.lowerProject ul li {
+  margin: 40px auto 20px auto;
+  font-weight: bold;
+  font-size: 15pt;
+}
+
+/* Channels */
+
+.channelsList {
+  background-color: #efefef;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+.channel {
+  display: flex;
+  width: 80%;
+  height: 150px;
+  margin: auto;
+  border: 1px solid lightgray;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.channelIcon {
+  height: 150px;
+  width: 150px;
+}
+
+.channel h2 {
+  margin-left: 30px;
+  color: #342a73;
+}
+
+.rightArrow {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  left: 400px;
+  top: 35px;
+}
+
+/* Message List && Messages */
+
+.messageList {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  margin: auto;
+  width: 60%;
+  min-height: 500px;
+  border: 1px solid #efefef;
+}
+.timestamp {
+  align-self: center;
+  padding-bottom: 10px;
+  opacity: 0.25;
+  font-size: 8pt
+}
+
+.messageWrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+}
+.message {
+  border-radius: 25px;
+  padding: 5px;
+  max-width: 300px;
+}
+
+.messageContent{
+  margin: 5px 5px 5px 5px;
+  color: #342a73;
+}
+.messageStyle {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+.messageUser {
+  height: 50px;
+  position: relative;
+  bottom: 5px
+}
+.channelName {
+  background-color: #00f19d;
+  width: 400px;
+  height: 50px;
+  margin: 0 auto 30px auto;
+  vertical-align: middle;
+}
+
+.channelName p {
+  color: #342a73;
+  font-size: 30pt;
+  margin: 0;
+  text-align: center;
+  font-weight: bold
+}
+.chatBar {
+  display: flex;
+  margin: 0 auto 0 auto;
+  width: 60%;
+  border: 1px solid #efefef;
+  justify-content: space-evenly;
+}
+
+.messageInput {
+  display: flex;
+  border: 1px solid #efefef;
+  border-radius: 25px;
+  height: 50px;
+  width: 250px;
+}
+
+.messageInput input {
+  padding-top: 5px;
+  padding-left: 5px;
+  border-radius: 30px;
+  border: none;
+  height: 40px;
+  font-size: 15pt;
+}
+
+.chatBar img {
+  height: 50px;
+
+}
+
+input[type=text]:focus {
+  outline: none;
 }
