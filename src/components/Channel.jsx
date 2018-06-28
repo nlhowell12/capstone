@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 class Channel extends Component {
+    state = {
+        newMessage: ''
+    }
+    sendMessage = () => {
+        
+    }
     render() {
         const { project, history, id } = this.props;
         return (

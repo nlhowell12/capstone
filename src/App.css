@@ -127,6 +127,8 @@ svg {
 /* Homepage Component */
 
 .homepage {
+  display: flex;
+  flex-direction: column;
   background-color: #efefef;
   height: 100%;
 }
@@ -306,11 +308,12 @@ svg {
   flex-direction: column;
   border: 1px solid lightgray;
   width: 80%;
-  height: 400px;
-  margin: 30px auto auto auto;
+  min-height: 400px;
+  margin: 30px auto 80px auto;
   position: relative;
   top: 40px;
   background-color: white;
+  padding-bottom: 20px;
 }
 .taskWrap * {
   margin: 10px 10px 0px 15px;
@@ -432,15 +435,18 @@ input[type='checkbox']:checked:after {
 
 .channelsList {
   background-color: #efefef;
-  height: 100vh;
+  height: 100%;
   padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
 }
 
 .channel {
   display: flex;
   width: 80%;
   height: 150px;
-  margin: auto;
+  margin: auto auto 30px;
   border: 1px solid lightgray;
   background-color: white;
   position: relative;
