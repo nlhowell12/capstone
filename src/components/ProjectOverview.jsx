@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AppHeader, NavBar } from '../components'
+import { AppHeader, NavBar, LongProject } from '../components'
 
 class ProjectOverview extends Component {
     render() {
@@ -11,10 +11,7 @@ class ProjectOverview extends Component {
                 <AppHeader></AppHeader>
                 <div className="projectOverview">
                     <h1>Project Overview</h1>
-                    <div className="upperProject">
-                    <img className="projectFile" src={require("../projectFile.png")} alt="projectFile"/>
-                    <h2>{project.projectName}</h2>
-                    </div>
+                    <LongProject project={project} id={index}></LongProject>
                     <div className="lowerProject">
                         <ul>
                             <li>{`Leads: ${project.leads}`}</li>

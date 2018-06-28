@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 
 class SuccessMessage extends Component {
     render () {
+        const { changeModal } = this.props
         return (
             <div className='successMessage'>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
@@ -12,7 +13,7 @@ class SuccessMessage extends Component {
                 <h3>Success!</h3>
                 <h6>Your account has been created</h6>
                 <p>You now have the ability to manage projects, create and complete assignments, and chat on channels!</p>
-                <button>CONTINUE TO APP</button>
+                <button onClick={evt => changeModal()}>CONTINUE TO APP</button>
                 <a>GO TO PROFILE SETTINGS</a>
             </div>
         )

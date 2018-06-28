@@ -6,7 +6,7 @@ class Activity extends Component {
         return (
             <div className='activity'>
                 <img src={require("../capstoneLogo.png")} alt="userPhoto"/>
-                <p>{`${activity.user} ${activity.activity}`}</p>
+                <p>{`${activity.username} ${activity.activity}`}</p>
             </div>
         )
     }

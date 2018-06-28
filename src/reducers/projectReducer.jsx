@@ -1,23 +1,23 @@
 import { createStore } from 'redux'
 
 const initialState = {
-    username: '',
+    username: 'Annie Brzezinski',
     email:'',
     activities: [
         {
-            user: 'Annie Brzezinski',
+            username: 'Annie Brzezinski',
             activity: "added John to the project:  CSL Logo Design Proof"
     }
     ],
     projects: [
         {
             projectName: 'Test Project',
-            summary: '',
-            targetAudience: '',
-            dates: '',
-            estimateLink: '',
-            location: '',
-            leads: '',
+            summary: `I don't know, this shit is a test.`,
+            targetAudience: 'Your mom',
+            dates: 'time is an illusion',
+            estimateLink: 'https://crackwhores.com',
+            location: 'here, I suppose',
+            leads: `None, we're bad at our job`,
             tasks: [
                 {
                     taskName: 'Making this shit work',
@@ -31,9 +31,14 @@ const initialState = {
             channel: {
                 messages: [
                     {
-                        user: '',
-                        timestamp: 0,
-                        message: ''
+                        username: 'Annie Brzezinski',
+                        timestamp: 1234253,
+                        message: 'This is tons of fun'
+                    },
+                    {
+                        username: 'Nick Howell',
+                        timestamp: 123423523,
+                        message: 'Right? So much fun.'
                     }
                 ]
             }
