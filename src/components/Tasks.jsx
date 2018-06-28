@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ToDoList from './toDoList'
-import { connect } from 'react-redux'
 
 class Tasks extends Component {
     render() {
@@ -14,10 +13,4 @@ class Tasks extends Component {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {
-      projects: state.projects
-    }
-  }
-
-export default connect(mapStateToProps)(Tasks);
+export default Tasks;

@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-import { SIGNUP, LOGIN, GET_PROJECTS, POST_PROJECT, POST_MESSAGES, GET_MESSAGES, LOGOUT, MARK_COMPLETE, DELETE_TODO } from '../actions'
+import { SIGNUP, LOGIN, GET_PROJECTS, POST_PROJECT, POST_MESSAGES, LOGOUT, MARK_COMPLETE, DELETE_TODO } from '../actions'
 
 const initialState = {
     username: '',
@@ -33,8 +33,6 @@ const projectReducer = (state = initialState, action) => {
         }
         return newProjectState
         case POST_MESSAGES:
-        return {}
-        case GET_MESSAGES:
         return {}
         case LOGOUT:
         return {}

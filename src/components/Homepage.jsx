@@ -33,7 +33,7 @@ class Homepage extends Component {
                 <AppHeader></AppHeader>
                 <RecentActivity></RecentActivity>
                 <ProjectListing></ProjectListing>
-                <Tasks></Tasks>
+                <Tasks projects={projects.slice(-4)}></Tasks>
                 <NavBar></NavBar>
             </div>
         )

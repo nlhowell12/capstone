@@ -55,12 +55,6 @@ export const postMessages = (user, timestamp, message, target) => {
     }
 };
 
-export const getMessages = () => {
-    return {
-        type: GET_MESSAGES
-    }
-};
-
 export const deleteTodo = () => {
     return {
         type: DELETE_TODO
