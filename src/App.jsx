@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import { Login, Signup, ForgotPassword, Homepage, ChannelsList, MessageList, TaskPage, ProjectsPage } from './components'
+import { Login, Signup, ForgotPassword, Homepage, ChannelsList, MessageList, TaskPage, ProjectsPage, NewProjectPage } from './components'
 import './App.css';
 import ProjectOverview from './components/ProjectOverview';
 
@@ -18,6 +18,7 @@ class App extends Component {
           <Route path = '/channels' render={() => <ChannelsList></ChannelsList>}></Route>
           <Route path = '/channel/:id' render={({match}) => <MessageList index={match.params.id}></MessageList>}></Route>
           <Route path = '/tasks' render={() => <TaskPage></TaskPage>}></Route>
+          <Route path = '/newProject' render={() => <NewProjectPage></NewProjectPage>}></Route>
         </Switch>
       </div>
     );

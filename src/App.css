@@ -68,14 +68,31 @@
 
 /* Success Message Component */
 
+.backdrop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vw;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
 .successMessage {
   display: flex;
   flex-direction: column;
   align-content: center;
-  align-self: center;
   margin: auto;
   width: 400px;
   height: 600px;
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 1px solid lightgray;
+  background: white;
+  transform: translate(-50%, -50%)
 }
 
 .successMessage * {
@@ -94,6 +111,7 @@
   height: 35px;
   width: 200px;
   background-color: #00f19d;
+  cursor: pointer;
 }
 
 .successMessage h6 {
@@ -186,12 +204,41 @@ svg {
   background-color: white;
 }
 
+.projectsDisplay {
+  display: flex;
+}
+
 .upperProject {
   cursor: pointer;
 }
 
 .projectsPageDisplay {
   padding-top: 60px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.projectsPageDisplay button {
+  height: 75px;
+  width: 75px;
+  background-color: #00f19d;
+  border-radius: 45px;
+  position: fixed;
+  top: 625px;
+  right: 80px;
+  font-size: 40pt;
+  color: #342a73;
+  cursor: pointer;
+
+}
+
+.projectsPageDisplay button:focus {
+  outline: none;
+}
+
+.projectsPageDisplay button p {
+ margin: 0 auto 10px;
 }
 
 .projectListing * {
@@ -414,8 +461,9 @@ input[type='checkbox']:checked:after {
   height: 70px;
   width: 70px;
   position: relative;
-  left: 400px;
-  top: 35px;
+  top: 30px;
+  left: 20%;
+  margin: 0 auto !important
 }
 
 /* Message List && Messages */

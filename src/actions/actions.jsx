@@ -1,7 +1,7 @@
 export const SIGNUP = 'SIGNUP';
 export const LOGIN = 'LOGIN';
 export const GET_PROJECTS = 'GET_PROJECTS';
-export const POST_PROJECTS = 'POST_PROJECTS';
+export const POST_PROJECT = 'POST_PROJECTS';
 export const POST_MESSAGES = 'POST_MESSAGES';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const LOGOUT = 'LOGOUT'
@@ -31,23 +31,17 @@ export const logout = () => {
     }
 }
 
-export const getProjects = () => {
+export const getProjects = (state) => {
     return {
-        type: GET_PROJECTS
+        type: GET_PROJECTS,
+        state
     }
 };
 
-export const postProjects = (projectName, summary, targetAudience, dates, estimateLink, location, leads, tasks) => {
+export const postProject = (newProject) => {
     return {
-        type: POST_PROJECTS,
-        projectName,
-        summary,
-        targetAudience,
-        dates, 
-        estimateLink,
-        location,
-        leads,
-        tasks
+        type: POST_PROJECT,
+        newProject
     }   
 };
 

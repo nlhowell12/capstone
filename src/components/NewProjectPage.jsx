@@ -16,6 +16,17 @@ class NewProjectPage extends Component {
     onChange = stateProp => evt => {
         this.setState({[stateProp]: evt.target.value})
     }
+    checkSubmit = () => {
+        const { projects } = this.props;
+        const { projectName } = this.state;
+        let projectNames = [];
+        projects.map(project => projectNames.push(project.projectName))
+        if(projectNames.includes(projectName)) {
+            alert("Project name is already in use, please choose another.")
+        } else {
+            this.submit()
+        }
+    }
     submit = () => {
         const { history, dispatch } = this.props;
         const { projectName, summary, targetAudience, dates, location, estimateLink, leads } = this.state;
@@ -73,11 +84,17 @@ class NewProjectPage extends Component {
                         <input type="text" placeholder="Leads" onChange={this.onChange('leads')}/>
                         <input type="text" placeholder="Estimate Link" onChange={this.onChange('estimateLink')}/>
                     </div>
-                    <button className='loginButton' onClick={evt => this.submit()}>SUBMIT</button>
+                    <button className='loginButton' onClick={evt => this.checkSubmit()}>SUBMIT</button>
                 </div>
             </div>
         )
     }
 }
 
-export default withRouter(connect()(NewProjectPage))
+const mapStateToProps = (state) => {
+    return {
+        projects: state.projects
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(NewProjectPage))
