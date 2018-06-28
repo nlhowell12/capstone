@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RecentActivity, AppHeader, ProjectListing, NavBar, Tasks, SuccessMessage } from '../components';
 import { connect } from 'react-redux';
+import { getProjects } from '../actions'
 
 class Homepage extends Component {
     state={
@@ -13,7 +14,12 @@ class Homepage extends Component {
         })
     }
     componentDidMount = () => {
-
+        const { dispatch } = this.props;
+        fetch('https://rocky-hollows-88234.herokuapp.com/projects')
+            .then(res => res.json())
+            .then(data => {
+                dispatch(getProjects(data))
+            })
     }
     render() {
         const { modal } = this.state;
