@@ -69,14 +69,13 @@
 /* Success Message Component */
 
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100vw;
+  height: 100%;
   z-index: 9998;
   background: rgba(0, 0, 0, 0.3);
-  overflow: hidden;
 }
 
 .successMessage {
@@ -232,7 +231,6 @@ svg {
   font-size: 40pt;
   color: #342a73;
   cursor: pointer;
-
 }
 
 .projectsPageDisplay button:focus {
@@ -325,14 +323,40 @@ svg {
   border: 1px solid #efefef;
 }
 
-.todoWrap h3 {
-  margin: 20px 0 0 20px
-}
-
 .todo-list {
   margin: 40px auto auto 30px;
 	padding: 0;
 	list-style: none;
+}
+
+.todoListTitle {
+  display: flex;
+  position: relative;
+}
+.todoListTitle h3 {
+  display: flex;
+  position: relative;
+  top: 3px
+}
+.todoListTitle button {
+  height: 30px;
+  width: 30px;
+  background-color: #00f19d;
+  border-radius: 45px;
+  font-size: 15pt;
+  color: #342a73;
+  cursor: pointer;
+  position: relative;
+}
+
+.todoListTitle button:focus {
+  outline: none;
+}
+
+.todoListTitle button p {
+ margin: 0;
+ position: relative;
+ bottom: 1px
 }
 
 .todo-list li {

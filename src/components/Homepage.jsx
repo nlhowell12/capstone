@@ -26,10 +26,8 @@ class Homepage extends Component {
         const { projects, activities } = this.props;
         return (
             <div className="homepage">
-                <React.Fragment>
                     {(modal && projects.length === 0 && activities.length === 0) && <div className="backdrop"></div>}
                     {(modal && projects.length === 0 && activities.length === 0) && <SuccessMessage changeModal={this.changeModal}></SuccessMessage>}
-                </React.Fragment>
                 <AppHeader></AppHeader>
                 <RecentActivity></RecentActivity>
                 <ProjectListing></ProjectListing>

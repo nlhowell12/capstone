@@ -7,7 +7,10 @@ class ToDoList extends Component {
       const { todos, title } = this.props
       return (
         <div className='todoWrap'>
-          <h3>{title}</h3>
+          <div className="todoListTitle">
+            <h3>{title}</h3>
+            <button><p>+</p></button>  
+          </div>
           <ul className="todo-list">
           {todos.map((todo, id) => <ToDoItem key={id} id={todo.id} completed={todo.completed} title={todo.taskName}/>)}
           </ul>
