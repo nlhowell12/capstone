@@ -4,9 +4,10 @@ export const GET_PROJECTS = 'GET_PROJECTS';
 export const POST_PROJECT = 'POST_PROJECTS';
 export const POST_MESSAGES = 'POST_MESSAGES';
 export const GET_MESSAGES = 'GET_MESSAGES';
-export const LOGOUT = 'LOGOUT'
-export const MARK_COMPLETE = 'MARK_COMPLETE'
-export const DELETE_TODO = 'DELETE_TODO'
+export const LOGOUT = 'LOGOUT';
+export const MARK_COMPLETE = 'MARK_COMPLETE';
+export const DELETE_TODO = 'DELETE_TODO';
+export const ADD_TODO = 'ADD_TODO';
 
 export const signup = (username, password, email) => {
     return {
@@ -45,13 +46,13 @@ export const postProject = (newProject) => {
     }   
 };
 
-export const postMessages = (user, timestamp, message, target) => {
+export const postMessages = (username, timestamp, message, projectName) => {
     return {
         type: POST_MESSAGES,
-        user,
+        username,
         timestamp,
         message,
-        target
+        projectName
     }
 };
 
@@ -64,6 +65,12 @@ export const deleteTodo = () => {
 export const markComplete = () => {
     return {
         type: MARK_COMPLETE
+    }
+}
+
+export const addTodo = () => {
+    return {
+        type: ADD_TODO
     }
 }
 
