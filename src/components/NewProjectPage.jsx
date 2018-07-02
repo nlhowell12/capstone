@@ -13,9 +13,6 @@ class NewProjectPage extends Component {
         estimateLink: '',
         leads: ''
     }
-    onChange = stateProp => evt => {
-        this.setState({[stateProp]: evt.target.value})
-    }
     checkSubmit = () => {
         const { projects } = this.props;
         const { projectName } = this.state;

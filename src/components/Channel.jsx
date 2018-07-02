@@ -13,8 +13,7 @@ class Channel extends Component {
         this.setState({[stateProp]: evt.target.value})
     }
     render() {
-        const { projects, project, history, id } = this.props;
-        const timestamp = Date.now()
+        const { project, history, id } = this.props;
         return (
             <div className="channel" onClick={() => history.push(`/channel/${id}`)}>
                 <img src={require('../channelIcon.png')} className="channelIcon" alt="channelIcon"/>
@@ -28,7 +27,6 @@ class Channel extends Component {
 const mapStateToProps = (state) => {
     return {
         username: state.username,
-        projects: state.projects
     }
 }
 
