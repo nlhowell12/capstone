@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Message, AppHeader, NavBar, ChatBar } from '../components'
-import { postMessages } from '../actions';
+import { postMessages, getProjects } from '../actions';
 
 
 class MessageList extends Component {
@@ -36,7 +36,14 @@ class MessageList extends Component {
         
         this.setState({newMessage: ''});
     }
-    component
+    componentDidMount = () => {
+        const { dispatch } = this.props;
+        fetch('https://rocky-hollows-88234.herokuapp.com/projects')
+            .then(res => res.json())
+            .then(data => {
+                dispatch(getProjects(data))
+            })
+    }
     render() {
         const { projects, index } = this.props;
         return (
