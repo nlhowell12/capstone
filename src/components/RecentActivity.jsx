@@ -8,6 +8,7 @@ class RecentActivity extends Component {
         return (
             <div className='recentActivity'>
                 <h2>Recent Activity</h2>
+                {activities.length === 0 && <p>There are no recent activities to display</p> }
                 {activities.map((activity, id) => <Activity key={id} activity={activity}></Activity>)}
                 <a>VIEW ALL</a>
             </div>

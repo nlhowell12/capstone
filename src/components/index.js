@@ -16,7 +16,8 @@ import TaskPage from './TaskPage.jsx';
 import ProjectsPage from './ProjectsPage.jsx';
 import LongProject from './LongProject.jsx';
 import Message from './Message.jsx';
-import ChatBar from './ChatBar.jsx'
+import ChatBar from './ChatBar.jsx';
+import NewProjectPage from './NewProjectPage.jsx'
 
 export { Login, Signup, ForgotPassword, SuccessMessage, RecentActivity, Homepage, AppHeader, NavBar, ProjectListing, Tasks, ToDoList, ChannelsList, Channel, MessageList,
-TaskPage, ProjectsPage, LongProject, Message, ChatBar }
+TaskPage, ProjectsPage, LongProject, Message, ChatBar, NewProjectPage }

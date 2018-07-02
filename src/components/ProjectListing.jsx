@@ -15,7 +15,8 @@ class ProjectListing extends Component {
                 <a onClick={() => history.push('/projects')}>MORE</a>
                 </div>
                 <div className="projectsDisplay">
-                    {projects.map((project, id) => <Project key={id} id={id} project={project}></Project>)}
+                    {projects.length === 0 && <p>There are no projects to display</p>}
+                    {projects.map((project, id) => id > projects.length - 5 ? <Project key={id} id={id} project={project}></Project> : null)}
                 </div>
             </div>
         )

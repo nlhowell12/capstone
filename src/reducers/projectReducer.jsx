@@ -1,55 +1,45 @@
 import { createStore } from 'redux'
 
+import { SIGNUP, LOGIN, GET_PROJECTS, POST_PROJECT, POST_MESSAGES, LOGOUT, MARK_COMPLETE, DELETE_TODO } from '../actions'
+
 const initialState = {
-    username: 'Annie Brzezinski',
+    username: '',
     email:'',
-    activities: [
-        {
-            username: 'Annie Brzezinski',
-            activity: "added John to the project:  CSL Logo Design Proof"
-    }
-    ],
-    projects: [
-        {
-            projectName: 'Test Project',
-            summary: `I don't know, this shit is a test.`,
-            targetAudience: 'Your mom',
-            dates: 'time is an illusion',
-            estimateLink: 'https://crackwhores.com',
-            location: 'here, I suppose',
-            leads: `None, we're bad at our job`,
-            tasks: [
-                {
-                    taskName: 'Making this shit work',
-                    completed: false
-                },
-                {
-                    taskName: 'Really hate css',
-                    completed: false
-                }
-            ],
-            channel: {
-                messages: [
-                    {
-                        username: 'Annie Brzezinski',
-                        timestamp: 1234253,
-                        message: 'This is tons of fun'
-                    },
-                    {
-                        username: 'Nick Howell',
-                        timestamp: 123423523,
-                        message: 'Right? So much fun.'
-                    }
-                ]
-            }
-        }
-    ]
+    activities: [ ],
+    projects: [ ]
 }
+        
 
 
 
 const projectReducer = (state = initialState, action) => {
     switch(action.type) {
+        case SIGNUP:
+        return {}
+        case LOGIN:
+        return {}
+        case GET_PROJECTS:
+        let newState = {
+            username: action.state.username,
+            email: action.state.email,
+            activities: action.state.activities || [],
+            projects: action.state.projects || []
+        }
+        return newState;
+        case POST_PROJECT:
+        let newProjectState = {
+            ...state,
+            projects: [...state.projects, action.newProject]
+        }
+        return newProjectState
+        case POST_MESSAGES:
+        return {}
+        case LOGOUT:
+        return {}
+        case MARK_COMPLETE:
+        return state;
+        case DELETE_TODO:
+        return {}
         default:
             return state
     }
