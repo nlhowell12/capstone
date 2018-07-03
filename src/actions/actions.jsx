@@ -18,11 +18,11 @@ export const signup = (username, password, email) => {
     }
 };
 
-export const login = (email, password) => {
+export const login = (username, email) => {
     return {
         type: LOGIN, 
-        email,
-        password
+        username,
+        email
     }
 };
 
@@ -68,9 +68,11 @@ export const markComplete = () => {
     }
 }
 
-export const addTodo = () => {
+export const addTodo = (task, projectName) => {
     return {
-        type: ADD_TODO
+        type: ADD_TODO,
+        task,
+        projectName
     }
 }
 
