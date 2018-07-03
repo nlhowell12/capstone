@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 
-import { SIGNUP, LOGIN, GET_PROJECTS, POST_PROJECT, POST_MESSAGES, LOGOUT, MARK_COMPLETE, DELETE_TODO, ADD_TODO } from '../actions'
+import { LOGIN, GET_PROJECTS, POST_PROJECT, POST_MESSAGES, LOGOUT, MARK_COMPLETE, DELETE_TODO, ADD_TODO } from '../actions'
 
 const initialState = {
     username: '',
@@ -11,10 +11,13 @@ const initialState = {
         
 const projectReducer = (state = initialState, action) => {
     switch(action.type) {
-        case SIGNUP:
-        return state;
         case LOGIN:
-        return state;
+            let loginState = {
+                ...state,
+                username: action.username,
+                email: action.email
+            }
+        return loginState;
         case GET_PROJECTS:
         let newState = {
             username: action.state.username,
@@ -48,13 +51,30 @@ const projectReducer = (state = initialState, action) => {
         }
         return newMessageState
         case LOGOUT:
-        return state;
+            let logoutState = {
+                username: '',
+                email:'',
+                activities: [ ],
+                projects: [ ]
+            }
+        return logoutState;
         case MARK_COMPLETE:
         return state;
         case DELETE_TODO:
         return state;
         case ADD_TODO:
-        return state;
+        let newTaskState = {
+            ...state,
+            projects: state.projects.map((project)=> {
+                if(project.projectName === action.projectName) {
+                    project.tasks = [...project.tasks, action.task]
+                    return project;
+                } else {
+                    return project;
+                }
+            })
+        }
+        return newTaskState;
         default:
             return state
     }

@@ -1,4 +1,3 @@
-export const SIGNUP = 'SIGNUP';
 export const LOGIN = 'LOGIN';
 export const GET_PROJECTS = 'GET_PROJECTS';
 export const POST_PROJECT = 'POST_PROJECTS';
@@ -8,15 +7,6 @@ export const LOGOUT = 'LOGOUT';
 export const MARK_COMPLETE = 'MARK_COMPLETE';
 export const DELETE_TODO = 'DELETE_TODO';
 export const ADD_TODO = 'ADD_TODO';
-
-export const signup = (username, password, email) => {
-    return {
-        type: SIGNUP,
-        username,
-        password, 
-        email
-    }
-};
 
 export const login = (username, email) => {
     return {
