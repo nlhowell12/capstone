@@ -44,6 +44,8 @@ class Signup extends Component {
                 
                     })
                     history.push('/home')
+                } else {
+                    alert("There was a problem creating your account, please try again later.")
                 }
             })
     } else {
