@@ -36,14 +36,21 @@ class MessageList extends Component {
         
         this.setState({newMessage: ''});
     }
+    componentWillMount = () => {
+        const { history, username } = this.props;
+        if(!username) {
+            history.push('/')
+        }
+    }
     componentDidMount = () => {
-        const { dispatch } = this.props;
+        const { dispatch, username } = this.props;
+        if(username) {
         fetch('https://rocky-hollows-88234.herokuapp.com/projects')
             .then(res => res.json())
             .then(data => {
                 dispatch(getProjects(data))
             })
-    }
+    }}
     render() {
         const { projects, index } = this.props;
         return (

@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { AppHeader, NavBar, LongProject } from '../components'
+import { AppHeader, NavBar, LongProject } from '../components';
+import { withRouter } from 'react-router-dom';
 
 class ProjectOverview extends Component {
+    componentWillMount = () => {
+        const { history, username } = this.props;
+        if(!username) {
+            history.push('/')
+        }
+    }
     render() {
         const { index, projects } = this.props;
         const project = projects[index];
@@ -30,8 +37,9 @@ class ProjectOverview extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        projects: state.projects
+        projects: state.projects,
+        username: state.username
     }
 }
 
-export default connect(mapStateToProps)(ProjectOverview);
+export default withRouter(connect(mapStateToProps)(ProjectOverview));

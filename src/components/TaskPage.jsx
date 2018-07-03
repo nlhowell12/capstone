@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { NavBar, AppHeader, Tasks } from '../components'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class TaskPage extends Component {
+    componentWillMount = () => {
+        const { history, username } = this.props;
+        if(!username) {
+            history.push('/')
+        }
+    }
     render() {
         const { projects } = this.props;
         return (
@@ -17,8 +24,9 @@ class TaskPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        projects: state.projects
+        projects: state.projects,
+        username: state.username
     }
 }
 
-export default connect(mapStateToProps)(TaskPage);
+export default withRouter(connect(mapStateToProps)(TaskPage));

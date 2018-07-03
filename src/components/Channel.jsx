@@ -6,8 +6,11 @@ class Channel extends Component {
     state = {
         newMessage: ''
     }
-    sendMessage = () => {
-        
+    componentWillMount = () => {
+        const { history, username } = this.props;
+        if(!username) {
+            history.push('/')
+        }
     }
     onChange = stateProp => evt => {
         this.setState({[stateProp]: evt.target.value})
@@ -26,7 +29,7 @@ class Channel extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        username: state.username,
+        username: state.username
     }
 }
 

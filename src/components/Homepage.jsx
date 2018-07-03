@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { RecentActivity, AppHeader, ProjectListing, NavBar, Tasks, SuccessMessage } from '../components';
+import { RecentActivity, AppHeader, ProjectListing, NavBar, SuccessMessage } from '../components';
 import { connect } from 'react-redux';
 import { getProjects } from '../actions'
+import { withRouter } from 'react-router-dom';
 
 class Homepage extends Component {
     state={
@@ -13,14 +14,21 @@ class Homepage extends Component {
             modal: !this.state.modal
         })
     }
+    componentWillMount = () => {
+        const { username, history } = this.props;
+        if(!username) {
+            history.push('/')
+        }
+    }
     componentDidMount = () => {
-        const { dispatch } = this.props;
-        fetch('https://rocky-hollows-88234.herokuapp.com/projects')
+        const { dispatch, username } = this.props;
+        if(username) {
+        fetch(`https://rocky-hollows-88234.herokuapp.com/projects/${username}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(getProjects(data))
             })
-    }
+    }}
     render() {
         const { modal } = this.state;
         const { projects, activities } = this.props;
@@ -31,7 +39,6 @@ class Homepage extends Component {
                 <AppHeader></AppHeader>
                 <RecentActivity></RecentActivity>
                 <ProjectListing></ProjectListing>
-                <Tasks projects={projects.slice(-4)}></Tasks>
                 <NavBar></NavBar>
             </div>
         )
@@ -41,8 +48,9 @@ class Homepage extends Component {
 const mapStateToProps = (state) => {
     return {
         projects: state.projects,
-        activities: state.activities
+        activities: state.activities,
+        username: state.username
     }
 }
 
-export default connect(mapStateToProps)(Homepage);
+export default withRouter(connect(mapStateToProps)(Homepage));
