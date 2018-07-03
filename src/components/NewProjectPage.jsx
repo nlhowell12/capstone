@@ -24,8 +24,11 @@ class NewProjectPage extends Component {
             this.submit()
         }
     }
+    onChange = stateProp => evt => {
+        this.setState({[stateProp]: evt.target.value})
+    }
     submit = () => {
-        const { history, dispatch } = this.props;
+        const { history, dispatch, username } = this.props;
         const { projectName, summary, targetAudience, dates, location, estimateLink, leads } = this.state;
         let method = {
             method: 'POST',
@@ -46,7 +49,7 @@ class NewProjectPage extends Component {
                 }
             })
         }
-        fetch('https://rocky-hollows-88234.herokuapp.com/projects', method)
+        fetch(`https://rocky-hollows-88234.herokuapp.com/projects/${username}`, method)
             .then(res => res.json())
             .then(data => {
                 dispatch(postProject(data))
@@ -65,6 +68,12 @@ class NewProjectPage extends Component {
             .then(() => {
                 history.push('/projects')
             })
+    }
+    componentWillMount = () => {
+        const { username, history } = this.props;
+        if(!username) {
+            history.push('/')
+        }
     }
     render() {
         return (
@@ -90,7 +99,8 @@ class NewProjectPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        projects: state.projects
+        projects: state.projects,
+        username: state.username
     }
 }
 
