@@ -237,6 +237,7 @@ svg {
 
 .upperProject {
   cursor: pointer;
+  max-width: 800px
 }
 
 .projectsPageDisplay {
@@ -252,7 +253,7 @@ svg {
   background-color: #00f19d;
   border-radius: 45px;
   position: fixed;
-  top: 625px;
+  top: 525px;
   right: 80px;
   font-size: 40pt;
   color: #342a73;
