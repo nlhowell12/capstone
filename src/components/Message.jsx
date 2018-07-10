@@ -13,6 +13,9 @@ class Message extends Component {
                     {user !== message.username && <img src={require('../messageUser.png')} alt='userIcon' className='messageUser'></img>}
                     <div className='message' style={user === message.username ? {backgroundColor: '#efefef'}: {backgroundColor: '#00f19d'}}>
                         <div className="messageContent">
+                            <div className="messageUsername">
+                                <p>{message.username}</p>
+                            </div>
                             <div className='messageText'>{message.message}</div>
                         </div>
                     </div>

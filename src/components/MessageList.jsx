@@ -44,6 +44,7 @@ class MessageList extends Component {
         }
     }
     componentDidMount = () => {
+        setInterval(() => {
         const { dispatch, username } = this.props;
         if(username) {
         fetch(`https://rocky-hollows-88234.herokuapp.com/projects/${username}`)
@@ -51,7 +52,7 @@ class MessageList extends Component {
             .then(data => {
                 dispatch(getProjects(data))
             })
-    }}
+    }}, 5000)}
     render() {
         const { projects, index } = this.props;
         return (
