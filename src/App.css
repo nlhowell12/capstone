@@ -168,8 +168,8 @@ svg {
   display: flex;
   align-content: center;
   flex-direction: column;
-  right: 50px;
-  top: 30px;
+  right: 10px;
+  top: 40px;
   color: #efefef;
 }
 
@@ -237,6 +237,7 @@ svg {
 
 .upperProject {
   cursor: pointer;
+  max-width: 800px
 }
 
 .projectsPageDisplay {
@@ -252,7 +253,7 @@ svg {
   background-color: #00f19d;
   border-radius: 45px;
   position: fixed;
-  top: 625px;
+  top: 525px;
   right: 80px;
   font-size: 40pt;
   color: #342a73;
@@ -350,6 +351,7 @@ svg {
 .todoWrap {
   border: 1px solid lightgray;
   background-color: white;
+  max-width: 800px;
 }
 
 .todo-list {
@@ -357,6 +359,16 @@ svg {
 	padding: 0;
   list-style: none;
   background-color: white;
+}
+
+.view {
+  display: flex;
+  position: relative;
+}
+
+.view input {
+  position: relative;
+  top: 7px;
 }
 
 .todoModal {
@@ -565,16 +577,18 @@ input[type='checkbox']:checked:after {
   flex-direction: column;
   width: 100%;
   padding-bottom: 20px;
+  padding-right: 20px;
   position: relative;
 }
 .message {
   border-radius: 25px;
   padding: 5px;
   max-width: 300px;
+  margin-right: 40px;
 }
 
 .messageContent{
-  margin: 5px 5px 5px 5px;
+  margin: 5px 20px 5px 20px;
   color: #342a73;
 }
 .messageStyle {
@@ -586,7 +600,8 @@ input[type='checkbox']:checked:after {
 .messageUser {
   height: 50px;
   position: relative;
-  bottom: 5px
+  bottom: 5px;
+  padding-left: 40px;
 }
 
 .messageUsername {
