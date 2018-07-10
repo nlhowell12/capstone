@@ -168,8 +168,8 @@ svg {
   display: flex;
   align-content: center;
   flex-direction: column;
-  right: 50px;
-  top: 30px;
+  right: 10px;
+  top: 40px;
   color: #efefef;
 }
 
