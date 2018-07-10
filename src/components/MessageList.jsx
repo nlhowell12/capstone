@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Message, AppHeader, NavBar, ChatBar } from '../components'
 import { postMessages, getProjects } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 
 class MessageList extends Component {
@@ -45,7 +46,7 @@ class MessageList extends Component {
     componentDidMount = () => {
         const { dispatch, username } = this.props;
         if(username) {
-        fetch('https://rocky-hollows-88234.herokuapp.com/projects')
+        fetch(`https://rocky-hollows-88234.herokuapp.com/projects/${username}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(getProjects(data))
@@ -75,4 +76,4 @@ const mapStateToProps = (state) => {
         username: state.username
     }
 }
-export default connect(mapStateToProps)(MessageList)
+export default withRouter(connect(mapStateToProps)(MessageList))

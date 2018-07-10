@@ -19,9 +19,15 @@ class AppHeader extends Component {
 
     render() {
         const { modal } = this.state;
+        const { username } = this.props;
         return (
             <div className="appHeader">
                 <img src={require("../coopLogo.png")} alt="coopLogo"/>
+                <div className="username">
+                    <p style={ { color: '#00f19d' } }>
+                        {username}
+                    </p>
+                </div>
                 <img className="userImage" src={require("../userProfile.png")} alt="userImage" onClick={evt => this.setState({modal: !modal})}/>
                 {modal && <div className="loginModal"><p onClick={evt => this.logoutAuth()}>Logout</p></div>}
             </div>
@@ -29,4 +35,10 @@ class AppHeader extends Component {
     }
 }
 
-export default withRouter(connect()(AppHeader));
+const mapStateToProps = (state) => {
+    return {
+        username: state.username
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(AppHeader));
