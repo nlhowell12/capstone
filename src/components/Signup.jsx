@@ -66,7 +66,7 @@ class Signup extends Component {
                         <input type="email" placeholder="Email" onChange={this.onChange('email')}/>
                         <input type="password" placeholder="Password" onChange={this.onChange('password')}/>
                         <input type="password" placeholder="Re-Enter Password" onChange={this.onChange('passCheck')}/>
-                        {password !== passCheck && <p style={{color: 'red'}}>Passwords do not match</p>}
+                        {password !== passCheck && <p style={{color: 'red', textAlign: 'center'}}>Passwords do not match</p>}
                         {incompleteModal && <p style={{color: 'red'}}>Please complete all fields and then submit</p>}
                     </div>
                     <button className='loginButton' onClick={evt => this.signupAuth()}>SIGN UP</button>
