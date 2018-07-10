@@ -351,6 +351,7 @@ svg {
 .todoWrap {
   border: 1px solid lightgray;
   background-color: white;
+  max-width: 800px;
 }
 
 .todo-list {
@@ -358,6 +359,16 @@ svg {
 	padding: 0;
   list-style: none;
   background-color: white;
+}
+
+.view {
+  display: flex;
+  position: relative;
+}
+
+.view input {
+  position: relative;
+  top: 7px;
 }
 
 .todoModal {
